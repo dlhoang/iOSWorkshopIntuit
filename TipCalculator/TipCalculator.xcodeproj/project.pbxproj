@@ -103,8 +103,8 @@
 				82F2F3D61EBA98C500DFD541 /* ViewController.swift */,
 				82F2F3D81EBA98C500DFD541 /* Main.storyboard */,
 				82F2F4021EBAB05300DFD541 /* SettingsViewController.swift */,
-				82F2F3DB1EBA98C500DFD541 /* Assets.xcassets */,
 				82F2F3DD1EBA98C500DFD541 /* LaunchScreen.storyboard */,
+				82F2F3DB1EBA98C500DFD541 /* Assets.xcassets */,
 				82F2F3E01EBA98C500DFD541 /* Info.plist */,
 			);
 			path = TipCalculator;
@@ -512,6 +512,7 @@
 				82F2F3FB1EBA98C500DFD541 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		82F2F3FC1EBA98C500DFD541 /* Build configuration list for PBXNativeTarget "TipCalculatorTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +521,7 @@
 				82F2F3FE1EBA98C500DFD541 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		82F2F3FF1EBA98C500DFD541 /* Build configuration list for PBXNativeTarget "TipCalculatorUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +530,7 @@
 				82F2F4011EBA98C500DFD541 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

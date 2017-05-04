@@ -14,6 +14,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var billField: UITextField!
     @IBOutlet weak var tipControl: UISegmentedControl!
+    @IBOutlet weak var splitTipSlider: UISlider!
+    @IBOutlet weak var splitNumberLabel: UILabel!
+    @IBOutlet weak var totalEachLabel: UILabel!
     
     // Access UserDefaults
     let defaults = UserDefaults.standard
@@ -36,9 +39,11 @@ class ViewController: UIViewController {
     }
 
     @IBAction func calculateTip(_ sender: AnyObject) {
-        
         // Get a Double value.
         let defaultTipValue = defaults.double(forKey: "defaultTip")
+        
+        splitNumberLabel.text = String(describing: Int(splitTipSlider.value))
+        totalLabel.text = String(format: "$%.2f", Int(splitTipSlider.value))
         
         let tipPercentages = [defaultTipValue/100, 0.15, 0.18, 0.2]
         
@@ -51,6 +56,7 @@ class ViewController: UIViewController {
         /* anything inside parenthesis, change into its value */
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
+        totalEachLabel.text = String(format: "$%.2f", total / Double(Int(splitTipSlider.value)))
     }
     
     override func viewDidAppear(_ animated: Bool) {
