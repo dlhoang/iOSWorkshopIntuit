@@ -11,6 +11,7 @@ import UIKit
 class SettingsViewController: UIViewController {
 
     @IBOutlet weak var defaultTipField: UITextField!
+    @IBOutlet weak var invalidTipLabel: UILabel!
     
     //Access UserDefaults
     let defaults = UserDefaults.standard
@@ -19,6 +20,7 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
 
         defaultTipField.becomeFirstResponder()
+        invalidTipLabel.text = ""
         
         // Do any additional setup after loading the view.
         let tipValue = defaults.double(forKey: "defaultTip")
@@ -30,6 +32,7 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    /* tapping anywhere besides the textfield */
     @IBAction func onTap(_ sender: Any) {
         view.endEditing(true)
     }
@@ -38,6 +41,8 @@ class SettingsViewController: UIViewController {
         
         /* if they entered a number, good to go */
         if Double(self.defaultTipField.text!) != nil {
+            
+            invalidTipLabel.text = ""
             
             /* make sure user wants to set tip */
             let alertController = UIAlertController(title: "Set Default Tip?", message:
@@ -61,12 +66,16 @@ class SettingsViewController: UIViewController {
         
         /* if they didn't enter number, don't let them save it */
         else {
-            let alertController = UIAlertController(title: "Tip must be a number!", message:
-                "Enter a number for default tip value.", preferredStyle: UIAlertControllerStyle.alert)
+            let animation = CABasicAnimation(keyPath: "position")
+            animation.duration = 0.08
+            animation.repeatCount = 1
+            animation.autoreverses = true
+            animation.fromValue = NSValue(cgPoint: CGPoint(x: defaultTipField.center.x - 10, y: defaultTipField.center.y))
+            animation.toValue = NSValue(cgPoint: CGPoint(x: defaultTipField.center.x + 10, y: defaultTipField.center.y))
+            defaultTipField.layer.add(animation, forKey: "position")
             
-            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+            invalidTipLabel.text = "Tip amount must be a number"
             
-            self.present(alertController, animated: true, completion: nil)
         }
     }
 }

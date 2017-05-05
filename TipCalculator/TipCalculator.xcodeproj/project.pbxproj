@@ -15,6 +15,7 @@
 		82F2F3EA1EBA98C500DFD541 /* TipCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F2F3E91EBA98C500DFD541 /* TipCalculatorTests.swift */; };
 		82F2F3F51EBA98C500DFD541 /* TipCalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F2F3F41EBA98C500DFD541 /* TipCalculatorUITests.swift */; };
 		82F2F4031EBAB05300DFD541 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F2F4021EBAB05300DFD541 /* SettingsViewController.swift */; };
+		82F2F4061EBAECA100DFD541 /* BillClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F2F4051EBAECA100DFD541 /* BillClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		82F2F3F41EBA98C500DFD541 /* TipCalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCalculatorUITests.swift; sourceTree = "<group>"; };
 		82F2F3F61EBA98C500DFD541 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		82F2F4021EBAB05300DFD541 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		82F2F4051EBAECA100DFD541 /* BillClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				82F2F3DD1EBA98C500DFD541 /* LaunchScreen.storyboard */,
 				82F2F3DB1EBA98C500DFD541 /* Assets.xcassets */,
 				82F2F3E01EBA98C500DFD541 /* Info.plist */,
+				82F2F4051EBAECA100DFD541 /* BillClass.swift */,
 			);
 			path = TipCalculator;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				82F2F3D71EBA98C500DFD541 /* ViewController.swift in Sources */,
 				82F2F3D51EBA98C500DFD541 /* AppDelegate.swift in Sources */,
 				82F2F4031EBAB05300DFD541 /* SettingsViewController.swift in Sources */,
+				82F2F4061EBAECA100DFD541 /* BillClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
