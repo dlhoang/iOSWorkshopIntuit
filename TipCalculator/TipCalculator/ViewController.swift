@@ -46,7 +46,6 @@ class ViewController: UIViewController {
         let defaultTipValue = defaults.double(forKey: "defaultTip")
         
         splitNumberLabel.text = String(describing: Int(splitTipSlider.value))
-        totalLabel.text = String(format: "$%.2f", Int(splitTipSlider.value))
         
         let tipPercentages = [defaultTipValue/100, 0.15, 0.18, 0.2]
         
@@ -57,6 +56,9 @@ class ViewController: UIViewController {
         /* if text is empty, don't show error label */
         if (billField.text == "") {
             invalidAmountLabel.text = "Enter bill amount"
+            tipLabel.text = "$0.00"
+            totalLabel.text = "$0.00"
+            totalEachLabel.text = "$0.00"
         }
         
         /* make sure bill is a positive number */
