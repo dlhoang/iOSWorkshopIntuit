@@ -27,7 +27,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initializeCurrencyLabel()
+        initializeCurrencyLabel(label: tipLabel, value: 0.00)
+        initializeCurrencyLabel(label: totalLabel, value: 0.00)
+        initializeCurrencyLabel(label: totalEachLabel, value: 0.00)
 
         billField.becomeFirstResponder()
         invalidAmountLabel.text = "Enter bill amount"
@@ -40,12 +42,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func initializeCurrencyLabel() {
+    func initializeCurrencyLabel(label: UILabel, value: Double) {
         let currencySymbol = locale.currencySymbol
         currencyLabel.text = currencySymbol ?? ""
-        tipLabel.text = "\(locale.currencySymbol ?? "") 0.00"
-        totalLabel.text = "\(locale.currencySymbol ?? "") 0.00"
-        totalEachLabel.text = "\(locale.currencySymbol ?? "") 0.00"
+        label.text = String(format: "\(locale.currencySymbol ?? "") %.2f", value)
+        totalLabel.text = String(format: "\(locale.currencySymbol ?? "") %.2f", value)
+        totalEachLabel.text = String(format: "\(locale.currencySymbol ?? "") %.2f", value)
     }
 
     /* tapping anywhere outside the textfield */
@@ -54,6 +56,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func calculateTip(_ sender: AnyObject) {
+        
         // Get a Double value.
         let defaultTipValue = defaults.double(forKey: "defaultTip")
         
@@ -68,7 +71,9 @@ class ViewController: UIViewController {
         /* if text is empty, don't show error label */
         if (billField.text == "") {
             invalidAmountLabel.text = "Enter bill amount"
-            initializeCurrencyLabel()
+            initializeCurrencyLabel(label: tipLabel, value: 0.00)
+            initializeCurrencyLabel(label: totalLabel, value: 0.00)
+            initializeCurrencyLabel(label: totalEachLabel, value: 0.00)
         }
         
         /* make sure bill is a positive number */
@@ -80,11 +85,11 @@ class ViewController: UIViewController {
                 
                 let tip = bill! * tipPercentages[tipControl.selectedSegmentIndex]
                 let total = bill! + tip
-        
+                
                 /* anything inside parenthesis, change into its value */
-                tipLabel.text = String(format: "\(locale.currencySymbol ?? "") %.2f", tip)
-                totalLabel.text = String(format: "\(locale.currencySymbol ?? "") %.2f", total)
-                totalEachLabel.text = String(format: "\(locale.currencySymbol ?? "") %.2f", total / Double(Int(splitTipSlider.value)))
+                initializeCurrencyLabel(label: tipLabel, value: tip)
+                initializeCurrencyLabel(label: totalLabel, value: total)
+                initializeCurrencyLabel(label: totalEachLabel, value: total / Double(Int(splitTipSlider.value)))
             }
             
             else {
