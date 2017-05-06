@@ -18,13 +18,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var splitNumberLabel: UILabel!
     @IBOutlet weak var totalEachLabel: UILabel!
     @IBOutlet weak var invalidAmountLabel: UILabel!
+    @IBOutlet weak var currencyLabel: UILabel!
     
     // Access UserDefaults
     let defaults = UserDefaults.standard
+    let locale = Locale.current
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        initializeCurrencyLabel()
+
         billField.becomeFirstResponder()
         invalidAmountLabel.text = "Enter bill amount"
         
@@ -34,6 +38,14 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func initializeCurrencyLabel() {
+        let currencySymbol = locale.currencySymbol
+        currencyLabel.text = currencySymbol ?? ""
+        tipLabel.text = "\(locale.currencySymbol ?? "") 0.00"
+        totalLabel.text = "\(locale.currencySymbol ?? "") 0.00"
+        totalEachLabel.text = "\(locale.currencySymbol ?? "") 0.00"
     }
 
     /* tapping anywhere outside the textfield */
@@ -56,9 +68,7 @@ class ViewController: UIViewController {
         /* if text is empty, don't show error label */
         if (billField.text == "") {
             invalidAmountLabel.text = "Enter bill amount"
-            tipLabel.text = "$0.00"
-            totalLabel.text = "$0.00"
-            totalEachLabel.text = "$0.00"
+            initializeCurrencyLabel()
         }
         
         /* make sure bill is a positive number */
@@ -72,9 +82,9 @@ class ViewController: UIViewController {
                 let total = bill! + tip
         
                 /* anything inside parenthesis, change into its value */
-                tipLabel.text = String(format: "$%.2f", tip)
-                totalLabel.text = String(format: "$%.2f", total)
-                totalEachLabel.text = String(format: "$%.2f", total / Double(Int(splitTipSlider.value)))
+                tipLabel.text = String(format: "\(locale.currencySymbol ?? "") %.2f", tip)
+                totalLabel.text = String(format: "\(locale.currencySymbol ?? "") %.2f", total)
+                totalEachLabel.text = String(format: "\(locale.currencySymbol ?? "") %.2f", total / Double(Int(splitTipSlider.value)))
             }
             
             else {

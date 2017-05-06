@@ -39,10 +39,10 @@
                                             <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="editingChanged" id="NlZ-4S-mm8"/>
                                         </connections>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ung-Wl-IA4">
-                                        <rect key="frame" x="145" y="16" width="11" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ung-Wl-IA4">
+                                        <rect key="frame" x="138" y="16" width="26" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -75,7 +75,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2ik-m3-tRZ">
-                                        <rect key="frame" x="164" y="117" width="153" height="21"/>
+                                        <rect key="frame" x="194" y="117" width="123" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -89,7 +89,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="+" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QuQ-Zy-Cuh">
-                                        <rect key="frame" x="175" y="72" width="11" height="30"/>
+                                        <rect key="frame" x="166" y="72" width="11" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -110,7 +110,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="J18-fi-3HG">
-                                        <rect key="frame" x="164" y="123" width="153" height="21"/>
+                                        <rect key="frame" x="187" y="123" width="130" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -172,6 +172,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="billField" destination="BbR-Y0-wkK" id="Tzr-xH-MbH"/>
+                        <outlet property="currencyLabel" destination="ung-Wl-IA4" id="p5K-3h-LB6"/>
                         <outlet property="invalidAmountLabel" destination="qmD-vg-Xsq" id="DPt-Cn-sbW"/>
                         <outlet property="splitNumberLabel" destination="nZ1-51-rh6" id="p0G-u7-zAh"/>
                         <outlet property="splitTipSlider" destination="ofg-yZ-mOB" id="d09-cm-a2f"/>
